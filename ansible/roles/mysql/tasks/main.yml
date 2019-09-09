@@ -1,0 +1,25 @@
+---
+- name: install mysql repository
+  yum:
+    state: present
+    name: "{{ mysql_repos_url }}"
+    validate_certs: yes
+
+- name: MySQLをインストール
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+    - yum-utils
+    - MySQL-python
+    - mysql-community-server
+
+- name: running and enabled mysqld
+  service:
+    name: mysqld
+    state: started
+    enabled: yes
+
+# - name: MySQLのユーザーを追加
+#     mysql_user: name={{ mysql_user_name }} password={{ mysql_user_password }} priv=*.*:ALL

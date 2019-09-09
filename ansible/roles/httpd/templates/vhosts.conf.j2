@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  ServerName {{ vhost_name }}
+  DocumentRoot {{ vhost_rootdir }}
+  DirectoryIndex index.html index.php
+
+  <Directory "{{ vhost_rootdir }}">
+    AllowOverride All
+    Options -Indexes
+
+    # AuthType Basic
+    # AuthName "Please enter your ID and password"
+    # AuthUserFile "{{ vhost_rootdir }}/.htpasswd"
+    # Require valid-user
+  </Directory>
+</VirtualHost>

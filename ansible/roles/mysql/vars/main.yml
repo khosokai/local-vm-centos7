@@ -1,0 +1,4 @@
+---
+mysql_repos_url: http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+mysql_user_name: vagrant
+mysql_user_password: vagrant

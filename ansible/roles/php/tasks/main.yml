@@ -1,8 +1,13 @@
 ---
+- name: install php repository
+  yum:
+    name: http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+    state: present
+
 - name: install php 7.2
   yum:
     name: "{{ packages }}"
-    enablerepo: remi,remi-php72
+    enablerepo: remi-php72
     state: latest
   vars:
     packages:

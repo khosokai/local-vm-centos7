@@ -74,8 +74,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible_local" do |ansible|
     # 設定を適用する対象のサーバーの指定を記述するファイルの指定
     ansible.playbook = "/ansible/playbook.yml"
-    # # サーバーの設定をカスタマイズするためのレシピを記述する設定ファイルの指定
-    # ansible.inventory_path = "ansible/hosts"
-    # ansible.limit = 'all'
   end
 end
